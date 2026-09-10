@@ -23,17 +23,17 @@ Tikslas: recall >= 0.92, false positive <= 0.5%.
 | NFR-02 | Kokybe     | Sukciavimo aptikimas   | Recall >= 0.92         |
 | NFR-03 | Kokybe     | False positive rate    | <= 0.5%                |
 | NFR-04 | Dreifas    | Precision degradacija  | < 3% per 14 dienu      |
-| NFR-05 | Saziningumas | TPR skirtumas regionu | <= 5%                  |
-| NFR-06 | Kastai     | Inference kaina        | <= $0.0002/req        |
+| NFR-05 | Saziningumas | TPR skirtumas regionu| <= 5%                  |
+| NFR-06 | Kastai     | Inference kaina        | <= $0.0002/req         |
 | NFR-07 | Prieinamumas | Uptime               | >= 99.95%              |
 
-## 3.x Eksperimentų sekimo ir atkartojamumo NFR (v1.1)
+## 3.x Eksperimentu sekimo ir atkartojamumo NFR (v1.1)
 
-| ID     | Kategorija       | Reikalavimas                                                    | KPI                                   |
-|--------|------------------|-----------------------------------------------------------------|---------------------------------------|
-| NFR-08 | Atkartojamumas   | Bet kuris istorinis run atkuriamas `python reproduce.py <run_id>` | <= 2 min (be duomenų atsisiuntimo), delta accuracy <= 0.005 |
-| NFR-09 | Atsekamumas      | Kiekvienas eksperimentas turi MLflow run ID, git commit ir duomenų md5 tag'us; kiekvienas diegiamas modelis – `model_id` | 100 % run'ų |
-| NFR-10 | Duomenų versija  | Mokymo duomenų versija fiksuota DVC (`dvc.lock` md5 = run'o `dvc_raw_md5`) | 100 % run'ų |
+| ID 	 | Reikalavimas 						  | 		 KPI |
+|--------|----------------------------------------|--------------|
+| NFR-08 | Istorinis run atkuriamas reproduce.py  | 2 min, 0.005 | 
+| NFR-09 | Run: git commit + duomenu md5 zymos    | 100 % run’u  | 
+| NFR-10 | dvc.lock md5 = run’o dvc_raw_md5       | 100 % run’u  |
 
 ## 10.x Agentinis elgesys (v1.9)
 
@@ -103,7 +103,7 @@ Tikslas: recall >= 0.92, false positive <= 0.5%.
 | Versija | Data       | Autorius | Pakeitimai |
 |---------|------------|----------|------------|
 | 1.0     | 2026-09-15 | komanda  | Pradinis dokumentas |
-| 1.1     | 2026-09-09 | komanda  | MLflow + DVC pipeline, atkartojamumo NFR (NFR-08–NFR-10) |
+| 1.1     | 2026-09-10 | Nikita   | MLflow + DVC pipeline, atkartojamumo NFR (NFR-08–NFR-10) |
 | 1.9     | 2026-11-24 | komanda  | Self-healing LangGraph agentas (NFR-38–NFR-41) |
 | 1.10    | 2026-12-01 | komanda  | Observability stack (NFR-42–NFR-45) |
 | 1.11    | 2026-12-08 | komanda  | Scaling, spot, TCO (NFR-46–NFR-49) |
